@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block header %}{% include 'header.html' %} {% endblock header %}
+{% block banner %}{% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<div class="container mb-5">
+  <h1 class="text-center title text-capitalize mt-5 mb-5">feature products</h1>
+  <div class="row">
+      {% for item in pagin %}
+      <div class="col-12 col-md-6 col-lg-3 tcard">
+          <div class="card">
+              <a href="{% url 'detail' item.id %}"><img src="{{item.pix.url}}" class="card-img-top" alt="..." style="height: 250px;"></a>
+              <div class="card-body">
+                <h5 class="card-title text-capitalize">{{item.title}}</h5>
+                {% if item.promo_price %}
+                <p class="card-text">₦{{item.promo_price}}</p>
+                <del><p class="card-text">₦{{item.price}}</p></del>
+                {% else %}
+                <p class="card-text">₦{{item.price}}</p>
+                {% endif %}
+                <a href="#" class="btn btn-primary text-capitalize">add to cart</a>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <nav aria-label="Page navigation example mt-5 pagin">
+        <ul class="pagination justify-content-center">
+            
+            {% if pagin.has_previous %}
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              {% else %}
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </li>
+            {% endif %}
+
+            {% for item in pagin.pagination.page_range %}
+              
+              {% if item == pagin.number %}
+                <li class="page-item"><a class="page-link" href="">{{item}}</a></li>
+              {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{item}}">i{{item}}</a></li>
+              {% endif %}
+            {% endfor %}
+            
+            {% if pagin.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{pagin.paginator.num_pages}}" aria-label="next">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+            {% else %}   
+              <li class="page-item">
+                <a class="page-link" href="?page={{pagin.paginator.num_pages}}" aria-label="next">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li> 
+            {% endif %}
+        </ul>
+  </nav>
+        
+    
+{% endblock content %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock footer %}
+    

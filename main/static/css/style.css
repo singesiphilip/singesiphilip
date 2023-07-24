@@ -1,0 +1,427 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.loader-con{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(201, 255, 255);
+    transition: all .5s ease;
+    position: absolute;
+    z-index: 99999;
+    overflow-y: hidden !important;
+}
+.loader-con .loader{
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 15px dashed blue;
+    position: absolute;
+    margin: auto;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* styling header */
+.nav-item a{
+    color: white;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.nav-link img{
+    border-radius: 100%;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.wrapper span{
+    position: absolute;
+    top: -2px;
+    right: -10px;
+    background-color: black;
+    font-size: 8px;
+    border-radius: 50%;
+}
+.rash{
+    margin-left: 3%;
+    cursor: pointer;
+}
+:root{
+    --bg: white;
+    --icon: black;
+    --text: black;
+}
+.dark{
+    --bg:black;
+    --icon: white;
+    --text:white;
+}
+body{
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    /* overflow-y: hidden !important; */
+    font-family: 'Inter', sans-serif;
+}
+
+/* stylingh carousel */
+
+.carousel-control-prev i{
+    font-size: 50px;
+    color: grey !important;
+}
+
+.carousel-control-next i{
+    font-size: 50px;
+    color: grey !important;
+}
+.carousel-item img{
+    height: 80vh;
+}
+/* stylingh carousel done */
+
+/* styling content */
+.tcard .card{
+    text-align: center;
+    border: 2px solid blue;
+    box-shadow: 0 0 30px orangered;
+    transition: 1s;
+}
+.tcard img{
+    border-bottom: 2px solid blue;
+    padding: 10px;
+}
+.tcard .card:hover{
+    transform: translateY(-20px);
+}
+
+.tcard img{
+    border-bottom: 2px solid blue;
+    padding: 10px;
+}
+.catbag{
+    background-color: aqua;
+}
+.catbag h1{
+    color: black !important;
+}
+.catrow{
+    text-align: center;
+}
+.categ img{
+    border-radius: 100%;
+    background-color: aliceblue;
+    width: 350px;
+    height: 300px;
+    transition: 1s;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.categ img:hover{
+    transform: scale(0.5);
+}
+/* styling content done */
+
+/* styling footer */
+.fbag{
+    background-color: rgb(201, 255, 255);
+    text-align: center;
+    padding: 20px;
+}
+.fbag h3{
+    text-transform: capitalize;
+}
+.fbag a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-weight: 500%;
+}
+.fbag a:hover{
+    color: blue;
+}
+.fbag img{
+    padding-top: 10%;
+}
+.fcont i{
+    color: black;
+}
+/* styling footer done */
+
+/* styling banner */
+.banner{
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(../img/banner.jpg);
+    background-repeat: no no-repeat;
+    background-size: cover;
+    height: 40vh;
+}
+.pagination a :hover{
+    background-color: blue;
+    color: aliceblue;
+}
+/* styling banner done*/
+
+
+/* styling details */
+.det .card{
+    border: none;
+}
+.det .row{
+    text-transform: capitalize;
+}
+.det .card-text{
+    font-size: 20px;
+    font-weight: bold;
+}
+/* styling details done */
+
+/* styling contact */
+.cform label{
+    color: black;
+    font-size: bold;
+    text-transform: capitalize;
+    width: 600;
+    height: 450;
+}
+/* styling contact done*/
+
+
+/* styling register */
+.signup label{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.pass{
+    position: relative;
+}
+.see{
+    position: absolute;
+    top: 85%;
+    right: 32%;
+    cursor: pointer;
+}
+.see .bi-eye-fill{
+    display: none;
+}
+.see.hide .bi-eye-fill{
+    display: block;
+}
+.see.hide .bi-eye-slash{
+    display: none;
+}
+.signup form{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 2px solid blue;
+    box-shadow: 0 0 30px black;
+    padding: 20px;
+}
+.signup button{
+    width: 100%;
+}
+.signup p{
+    font-weight: 500;
+}
+.signup a{
+    text-decoration: none;
+    color: blue;
+}
+/* styling register done*/
+
+/* styling cart */
+.cart table{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    text-transform: capitalize;
+    border: 2px solid blue;
+}
+.cart thead{
+    background-color: rgb(201, 255, 255);
+}
+.item td{
+    border: 1px solid blue;
+}
+.item input{
+    width: 20%;
+}
+.item i{
+    color: red;
+}
+.subtot td{
+    font-size: 20px;
+    font-weight: 500;
+}
+/* styling cart done*/
+
+/* styling cart */
+.checkout label{
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.checkout input:focus{
+    border: 2px solid blue;
+}
+.checkout button{
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+/* styling cart done*/
+
+/* styling profile */
+.pavat{
+    text-align: center;
+    background-color: rgb(201, 255, 255);
+}
+.pavat img{
+    border-radius: 100%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.pavat h5{
+    font-style: italic;
+}
+.pavat a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.pavat a:hover{
+    color: blue;
+}
+.pform form{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.pform label{
+    text-transform: capitalize;
+    font-weight: 500;
+}
+/* styling profile done*/
+
+ /* styling callback */
+ .thank{
+    text-align: center;
+ }
+ .thank p{
+    text-transform: capitalize;
+    font-weight: 500;
+ }
+
+.thank span{
+    color: blue;
+    font-style: italic;
+ }
+ /* styling callback done */
+
+ @media(max-width: 467px){
+    .carousel-item img{
+        height: 40vh;
+    }
+    .wrapper{
+        position: relative;
+    }
+    
+    .wrapper span{
+        position: absolute;
+        top: -2px;
+        right: 270px;
+        background-color: black;
+        font-size: 8px;
+        border-radius: 50%;
+    }
+    .tcard img{
+        border-bottom: 2px solid blue;
+        padding: 10px;
+    }
+    .catbag{
+        background-color: aqua;
+    }
+    .catrow{
+        text-align: center;
+    }
+    .categ img{
+        border-radius: 100%;
+        background-color: aliceblue;
+        width: 250px;
+        height: 200px;
+        transition: 1s;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    .categ img:hover{
+        transform: scale(0.5);
+    }
+    .tcard .card{
+        text-align: center;
+        border: 2px solid blue;
+        box-shadow: 0 0 30px orangered;
+        transition: 1s;
+        margin-bottom: 5%;
+    }
+    .tcard img{
+        border-bottom: 2px solid blue;
+        padding: 10px;
+    }
+    .tcard .card:hover{
+        transform: translateY(-20px);
+    }
+    .banner{
+        background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(../img/banner.jpg);
+        background-repeat: no no-repeat;
+        background-size: cover;
+        height: 25vh;
+        background-size: contain;
+    }
+    .pagination a :hover{
+        background-color: blue;
+        color: aliceblue;
+    }
+    .signup label{
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    
+    .signup form{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        border: 2px solid blue;
+        box-shadow: 0 0 30px black;
+        padding: 20px;
+    }
+    .signup button{
+        width: 100%;
+    }
+    .signup p{
+        font-weight: 500;
+        text-align: center;
+    }
+    .signup a{
+        text-decoration: none;
+        color: blue;
+    }
+    .cform label{
+        color: black;
+        font-size: bold;
+        text-transform: capitalize;
+        width: 600;
+        height: 450;
+    }
+ }
