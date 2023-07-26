@@ -228,7 +228,7 @@ def add_to_cart(request):
 
 @login_required(login_url='signin')        
 def cart(request):
-    cart = Cart.objects.filter(user__username = request.user.username)
+    cart = Cart.objects.filter(user__username = request.user.username, paid=False)
     for item in cart:
         item.amount = item.price * item.quantity
         item.save()
@@ -342,7 +342,7 @@ def payment(request):
 
 @login_required(login_url='signin')
 def callback(request):
-    userprof = Customer.objects.get(user__username = request.user.username)
+    userprof = Customer.objects.get(user__username = request.user.username, paid=False)
     cart = Cart.objects.filter(user__username = request.user.username)
 
     for item in cart:
